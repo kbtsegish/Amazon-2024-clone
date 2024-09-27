@@ -52,3 +52,33 @@ solve for app.netlify.com
 npm show react-currency-format versions --json
 
 
+npm outdated
+npm update
+
+npm install package-name@version
+
+npm install @eslint/js@latest
+npm install @mui/icons-material@latest
+npm install @types/react@latest
+npm install eslint@latest
+npm install eslint-plugin-react@latest
+npm install eslint-plugin-react-hooks@latest
+npm install eslint-plugin-react-refresh@latest
+npm install vite@latest
+
+
+"dependencies": {
+  "@eslint/js": "^9.11.1",
+  "@mui/icons-material": "^6.1.1",
+  "@types/react": "^18.3.9",
+  "eslint": "^9.11.1",
+  "eslint-plugin-react": "^7.37.0",
+  "eslint-plugin-react-hooks": "^5.1.0",
+  "eslint-plugin-react-refresh": "^0.4.12",
+  "vite": "^5.4.8"
+}
+
+
+git add .
+git commit -m "Downgrade React to version 17"
+git push
