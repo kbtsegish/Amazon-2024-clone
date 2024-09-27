@@ -45,3 +45,10 @@ npm i axios
 
 
 # order
+
+
+solve for app.netlify.com
+
+npm show react-currency-format versions --json
+
+

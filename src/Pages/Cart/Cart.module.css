@@ -13,6 +13,36 @@
     gap:5px
 }
 
+/* Cart.module.css */
+
+.registerMessage {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #333333; /* Adjust color as needed */
+  text-align: center; /* Center align the text */
+}
+hr {
+    border: 1px solid #333333;
+    align-items: center;
+}
+p {
+    align-items: center;
+}
+.registerLink {
+  color: #007bff; /* Bootstrap primary color */
+  font-weight: bold;
+  margin-right: 5px; /* Space between words */
+}
+
+.continueShopping {
+  font-size: 1.5rem;
+  color: #ffb007; /* amazon color */
+  text-align: center; 
+  margin-top: 15px;
+}
+
+
+
 .btn_container{
     display: flex;
     flex-direction: column;

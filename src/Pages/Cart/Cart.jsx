@@ -37,11 +37,24 @@ function Cart() {
     <LayOut>
       <section className={classes.container}>
         <div className={classes.cart_container}>
-          <h2>Hello, {user?.name || "Guest"}</h2>
-          <h3>Your Shopping Basket</h3>
-          <hr />
+          <h2>Welcome, {user?.displayName || user?.email || "Guest"}</h2>
+
           {basket?.length === 0 ? (
-            <p>Oops! No item in your cart</p>
+            <div>
+              <p>Oops! No items in your cart.</p>
+              <hr />
+              {!user && (
+                <p className={classes.registerMessage}>
+                  <Link to="/auth" className={classes.registerLink}>
+                    Register
+                  </Link>
+                  and start shopping!
+                </p>
+              )}
+              <Link to="/products" className={classes.continueShopping}>
+                Continue Shopping
+              </Link>
+            </div>
           ) : (
             basket?.map((item, i) => (
               <section key={i} className={classes.cart_product}>
@@ -51,19 +64,20 @@ function Cart() {
                   flex={true}
                   renderAdd={false}
                 />
+
                 <div className={classes.btn_container}>
                   <button
                     className={classes.btn}
                     onClick={() => increment(item)}
                   >
-                    <IoIosArrowUp size={30}/>
+                    <IoIosArrowUp size={30} />
                   </button>
                   <span> {item.amount} </span>
                   <button
                     className={classes.btn}
                     onClick={() => decrement(item.id)}
                   >
-                    <IoIosArrowDown size={30}/>
+                    <IoIosArrowDown size={30} />
                   </button>
                 </div>
               </section>

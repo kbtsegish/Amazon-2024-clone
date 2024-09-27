@@ -4,11 +4,16 @@ import { db } from "../../Utility/firebase";
 import { DataContext } from "../../Componenets/DataProvider/DataProvider";
 import { useContext, useEffect, useState } from "react";
 import ProductCard from "../../Componenets/Product/ProductCard";
-import { Padding } from "@mui/icons-material";
+import { IoMdPrint } from "react-icons/io";
 
 function Order() {
   const [{ user }] = useContext(DataContext);
   const [orders, setOrder] = useState([]);
+
+  // Print function
+  const handlePrint = () => {
+    window.print();
+  };
 
   useEffect(() => {
     if (user) {
@@ -37,7 +42,9 @@ function Order() {
           {/* Display orders */}
           <div>
             {orders?.length === 0 ? (
-              <p style={{Padding:"20"}}>pleas order first! No orders found</p>
+              <p style={{ Padding: "20" }}>
+                pleas order first! No orders found
+              </p>
             ) : (
               orders.map((eachOrder, i) => (
                 <div key={eachOrder.id}>
@@ -56,6 +63,9 @@ function Order() {
               ))
             )}
           </div>
+          <button onClick={handlePrint} className={classes.printButton}>
+            <IoMdPrint size={16} /> Print Order
+          </button>
         </div>
       </section>
     </LayOut>
